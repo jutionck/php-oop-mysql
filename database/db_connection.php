@@ -57,4 +57,17 @@ class DbConnection
 
         return $result;
     }
+
+    function create($table, $columns, $values)
+    {
+        var_dump($values);
+        $this->_connect();
+        $sql = "INSERT INTO " . $table . " " . $columns . "  VALUES " . $values;
+        $sql = $this->conn->query($sql);
+        if ($sql == true) {
+            return $sql;
+        } else {
+            return false;
+        }
+    }
 }
