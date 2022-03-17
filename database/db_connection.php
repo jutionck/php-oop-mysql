@@ -60,9 +60,28 @@ class DbConnection
 
     function create($table, $columns, $values)
     {
-        var_dump($values);
         $this->_connect();
         $sql = "INSERT INTO " . $table . " " . $columns . "  VALUES " . $values;
+        $sql = $this->conn->query($sql);
+        if ($sql == true) {
+            return $sql;
+        } else {
+            return false;
+        }
+    }
+
+    function getById($table, $id)
+    {
+        $sql = "SELECT * FROM " . $table . " WHERE id= " . $id;
+        $sql = $this->conn->query($sql);
+        $sql = $sql->fetch_assoc();
+        return $sql;
+    }
+
+    function update($table, $value, $where)
+    {
+        $this->_connect();
+        $sql = "UPDATE " . $table . " SET " . $value . "  WHERE id= " . $where;
         $sql = $this->conn->query($sql);
         if ($sql == true) {
             return $sql;

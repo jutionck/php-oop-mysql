@@ -17,7 +17,7 @@ switch ($page) {
     case "students/add":
         require("./layout/body/student/create.php");
         break;
-    case "students/edit/(:any)":
+    case "students_edit":
         require("./layout/body/student/update.php");
         break;
     default:
