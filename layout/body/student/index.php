@@ -42,7 +42,7 @@
 <script>
     $(document).ready(function() {
         $(document).on('click', '.delete-student', function() {
-            var id = $(this).data("id");
+            let id = $(this).data("id");
             if (confirm("Are you sure to delete this record ?")) {
                 $.ajax({
                     url: "layout/body/student/delete.php",
