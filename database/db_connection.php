@@ -89,4 +89,16 @@ class DbConnection
             return false;
         }
     }
+
+    function delete($table, $where)
+    {
+        $this->_connect();
+        $sql = "DELETE FROM " . $table . "  WHERE id= " . $where;
+        $sql = $this->conn->query($sql);
+        if ($sql == true) {
+            return $sql;
+        } else {
+            return false;
+        }
+    }
 }
