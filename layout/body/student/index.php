@@ -25,7 +25,7 @@
                             <td><?= $student["name"] ?></td>
                             <td><?= $student["npm"] ?></td>
                             <td><?= $student["email"] ?></td>
-                            <td><a href="<?= baseURL("index.php?page=students_edit&id=" . $student["id"]) ?>" class="btn btn-success btn-sm">Edit Data</a></td>
+                            <td><a href="<?= baseURL("index.php?page=students/edit&id=" . $student["id"]) ?>" class="btn btn-success btn-sm">Edit Data</a></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
